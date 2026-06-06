@@ -323,35 +323,6 @@ if predict_btn:
     dc3.metric("Total Time Proxy", f"{total_time_proxy:.1f}")
     st.markdown('</div>', unsafe_allow_html=True)
 
-
-# ── Info section ──────────────────────────────────────────────────────────────
-with st.expander("ℹ️ Tentang Model & Fitur"):
-    st.markdown("""
-    **Model:** XGBoost Regressor dengan hyperparameter tuning (RandomizedSearchCV, 50 iterasi × 5-fold CV)
-
-    **Fitur Input:**
-
-    | Fitur | Tipe | Keterangan |
-    |---|---|---|
-    | Distance_km | Numerik | Jarak pengiriman |
-    | Preparation_Time_min | Numerik | Waktu persiapan makanan |
-    | Courier_Experience_yrs | Numerik | Pengalaman kurir |
-    | Weather | Kategorikal | Kondisi cuaca |
-    | Traffic_Level | Kategorikal | Tingkat kemacetan |
-    | Time_of_Day | Kategorikal | Waktu pengiriman |
-    | Vehicle_Type | Kategorikal | Jenis kendaraan |
-
-    **Fitur Engineered (otomatis dihitung):**
-    - `distance_x_prep` = Distance × Preparation Time
-    - `exp_distance_ratio` = Experience / (Distance + 1)
-    - `total_time_proxy` = Distance + Preparation Time
-
-    **Preprocessing:** SimpleImputer → StandardScaler (numerik), OneHotEncoder (kategorikal)
-
-    **Target:** `Delivery_Time_min` — waktu pengiriman dalam menit
-    """)
-
-
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="footer">
