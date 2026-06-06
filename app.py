@@ -215,7 +215,7 @@ model = get_model()
 st.markdown("""
 <div class="hero">
     <h1>🛵 Food Delivery ETA Predictor</h1>
-    <p>Prediksi estimasi waktu pengiriman makanan berbasis Machine Learning (XGBoost).<br>
+    <p>Prediksi estimasi waktu pengiriman makanan berbasis Machine Learning.<br>
        IS411 Data Modelling · Grup 06 · Universitas Multimedia Nusantara</p>
 </div>
 """, unsafe_allow_html=True)
